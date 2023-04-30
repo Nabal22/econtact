@@ -1,0 +1,64 @@
+{# templates/user/user.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="user-section card">
+        <div class="card-header">
+            <div class="header">
+                <h1 class="title">Bienvenue {{ user.prenom }}</h1>
+                <a href="{{ path('app_logout') }}" class="btn btn-danger btn-logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+        <div class="card-body">
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <table class=\"table\">
+                        <tbody>
+                            <tr>
+                                <th>Nom</th>
+                                <td>{{ user.nom }}</td>
+                            </tr>
+                            <tr>
+                                <th>Prénom</th>
+                                <td>{{ user.prenom }}</td>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li class="list-group-item">
+                    <table class='contact-list'>
+                        <thead>
+                            <tr>
+                                <th>Vos Contacts</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for contact in contactList %}
+                                <tr class="contact-line">
+                                    <td>
+                                        {{contact.nom}}
+                                    </td>
+                                    <td>
+                                        <a href="{{ path('contact_preview', {'email': contact.email}) }}">
+                                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-eye"></i>
+                                            </button>
+                                        </a>
+                                        <a href="mailto:{{contact.email}}">
+                                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-envelope"></i>
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

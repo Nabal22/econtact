@@ -1,0 +1,5 @@
+# app/config/parameters.yml
+parameters:
+    router.request_context.host: http://econtact.test:808/
+    router.request_context.scheme: http
+    router.request_context.base_url: ''

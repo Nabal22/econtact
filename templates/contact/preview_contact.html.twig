@@ -1,0 +1,63 @@
+{# templates/user/user.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="user-section card">
+        <div class="card-header">
+            <div class="header">
+                <h1 class="title">Votre contact {{ contact.prenom }}</h1>
+                <a href="{{ path('user_profile') }}" class="btn btn-primary btn-logout"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+        </div>
+        <div class="card-body">
+            
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item">
+                        <table class=\"table\">
+                            <tbody>
+                                <tr>
+                                    <th>Son nom</th>
+                                    <td>{{ contact.nom }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Son prenom</th>
+                                    <td>{{ contact.prenom }}</td>
+                                <tr>
+                                    <th>Son mail</th>
+                                    <td>{{ contact.email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </li>
+                <li class="list-group-item">
+                    <span class="common-contact-text"> Vous avez <b>{{ nbCommonContact }}</b> contact(s) en commun</span>
+                </li>
+                {# preview commonContactList #}
+                <table class='contact-list'>
+                        <thead>
+                            <tr>
+                                <th>Vos Contacts en commun</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for contact in commonContactList %}
+                                <tr class="contact-line">
+                                    <td>
+                                        {{contact.nom}}
+                                    </td>
+                                    <td>
+                                        <a href="mailto:{{contact.email}}">
+                                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-envelope"></i>
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

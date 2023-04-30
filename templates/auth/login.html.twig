@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <h1>Connexion</h1>
+
+    <div class="login-form card">
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <div class="p-2 m-3">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
+            <div class="p-2 m-3">
+                {{ form_label(form.num) }}
+                {{ form_widget(form.num) }}
+            </div>
+            {% if error is defined %}
+            <div class="error">
+                <div class="card bg-danger">
+                        {{ error }}
+                </div>
+            </div>
+            {% endif %}
+        <button class="btn btn-success m-3" type="submit">Se connecter</button>
+    {{ form_end(form) }}
+    </div>
+
+    
+
+{% endblock %}

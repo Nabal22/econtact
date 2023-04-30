@@ -1,0 +1,53 @@
+:root{
+    --sky-blue: #8ecae6ff;
+    --blue-green: #219ebcff;
+    --prussian-blue: #023047ff;
+    --selective-yellow: #ffb703ff;
+    --ut-orange: #fb8500ff;
+}
+
+body{
+    background-color: #faf3ea;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.contact-line{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 5px;
+    border: 3px solid var(--blue-green);
+    border-radius: 5px;
+}
+.contact-list{
+    width:100%;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-logout{
+    margin : 10px;
+}
+.error .card{
+    padding : 5px;
+    margin : 10px;
+    width: 200px;
+    height: 80px;
+    text-align: center;
+}
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

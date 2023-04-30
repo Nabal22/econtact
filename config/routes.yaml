@@ -1,0 +1,18 @@
+home :
+    path : /
+    controller : App\Controller\HomeController::index
+app_login:
+    path: /login
+    controller: App\Controller\AuthController::login
+app_logout:
+    path: /logout
+    controller: App\Controller\AuthController::logout
+app_register:
+    path: /register
+    controller: App\Controller\AuthController::register
+user_profile:
+    path: /profile
+    controller: App\Controller\UserController::profile
+contact_preview:
+    path: /contact/preview/{email}
+    controller: App\Controller\ContactController::preview
